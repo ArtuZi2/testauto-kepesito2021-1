@@ -3,15 +3,15 @@ from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.chrome.options import Options
 
 options = webdriver.ChromeOptions()
-#options.add_argument('--headless')
-#options.add_argument('--disable-gpu')
+# options.add_argument('--headless')
+# options.add_argument('--disable-gpu')
 driver = webdriver.Chrome(ChromeDriverManager().install(), options=options)
 URL = "https://ambitious-sky-0d3acbd03.azurestaticapps.net/k5.html"
 
 # Oldal betöltése
 driver.get(URL)
 
-#Lokátorok
+# Lokátorok
 init_button = driver.find_element_by_id("init")
 play_button = driver.find_element_by_id("spin")
 

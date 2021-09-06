@@ -5,15 +5,15 @@ from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.chrome.options import Options
 
 options = webdriver.ChromeOptions()
-#options.add_argument('--headless')
-#options.add_argument('--disable-gpu')
+# options.add_argument('--headless')
+# options.add_argument('--disable-gpu')
 driver = webdriver.Chrome(ChromeDriverManager().install(), options=options)
 URL = " https://ambitious-sky-0d3acbd03.azurestaticapps.net/k2.html"
 
 # Oldal betöltése
 driver.get(URL)
 
-#Lokátorok
+# Lokátorok
 start = driver.find_element_by_id("start")
 stop = driver.find_element_by_id("stop")
 result = driver.find_element_by_id("result")
@@ -21,7 +21,6 @@ random_color = driver.find_element_by_id("randomColor")
 test_color = driver.find_element_by_id("testColor")
 random_color_name = driver.find_element_by_id("randomColorName")
 test_color_name = driver.find_element_by_id("testColorName")
-
 
 
 def test_right_appearence_page():
@@ -48,6 +47,7 @@ def test_start_and_stop_game():
 
     assert test_color != "[     ]"
 
+
 def test_correct_no_correct():
     """Eltaláltam, vagy nem találtam el.
 
@@ -55,10 +55,9 @@ def test_correct_no_correct():
         azt a színt tartalmazza akkor a Correct! felirat jelenik meg. ha akkor amikor eltérő szín van a jobb és bal
         oldalon akkor az Incorrect! felirat kell megjelenjen."""
 
-
     color_list = ["IndianRed", "Pink", "HotPink", "Coral", "OrangeRed", "DarkOrange", "Yellow", "DarkKhaki", "Violet",
                   "MediumOrchid", "DarkMagenta", "Chartreuse", "MediumSpringGreen", "DarkGreen", "DarkCyan",
-                  "Turquoise","RoyalBlue", "NavajoWhite", "SaddleBrown", "Gray", "Black", "AliceBlue",
+                  "Turquoise", "RoyalBlue", "NavajoWhite", "SaddleBrown", "Gray", "Black", "AliceBlue",
                   "OldLace", "Chocolate"]
     start.click()
     for i in color_list:
